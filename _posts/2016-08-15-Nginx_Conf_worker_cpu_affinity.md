@@ -37,6 +37,7 @@ grep "cpu cores" /proc/cpuinfo|sort|uniq
 grep "processor" /proc/cpuinfo|wc -l
 
 ```
+
 ### 为什么要绑定？
 为每个worker进程绑定指定的CPU内核，这样单个进程就可以独享这个CPU（假设绑定关系是一对一），避免了多个worker进程同时抢同一个CPU的情况，实现了
 内核调度策略上的真正并发,充分利用SMP（对称多处理结构）多核处理架构。
